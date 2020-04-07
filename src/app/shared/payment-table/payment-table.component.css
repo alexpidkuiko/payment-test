@@ -1,0 +1,8 @@
+.payment-table {
+  width: calc(100vw - 40px);
+}
+
+.table-head {
+  display: flex;
+  justify-content: space-between;
+}

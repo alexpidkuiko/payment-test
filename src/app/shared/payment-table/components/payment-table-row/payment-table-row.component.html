@@ -1,0 +1,20 @@
+<div class="table-row">
+  <td class="payment-cell" *ngFor="let column of columnData">
+    <ng-container *ngIf="column.controlName === priceByDayControlName; else simpleCell">
+      {{getFullPrice(rowData[column.controlName])}}
+    </ng-container>
+    <ng-template #simpleCell>
+      {{ rowData[column.controlName] }}
+    </ng-template>
+  </td>
+  <form class="month-form" [formGroup]="rowFormGroup">
+    <td class="month-cell" *ngFor="let control of rowControlNames">
+      <input type="checkbox" class="form-check-input" [formControlName]="control" >
+    </td>
+  </form>
+  <td>
+    <button type="button" class="btn btn-danger"
+            (click)="emitRemoveRow()">Удалить
+    </button>
+  </td>
+</div>

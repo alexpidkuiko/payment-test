@@ -1,0 +1,7 @@
+<form class="form-inline m-3" [formGroup]="paymentFormGroup">
+  <input type="text" class="form-control" placeholder="Наименование платежа *" formControlName="paymentName">
+  <input type="number" [min]="0" class="form-control ml-3" placeholder="Стоимость за день" formControlName="priceByDay">
+  <button type="button" class="btn btn-primary ml-3" [disabled]="paymentFormGroup.invalid"
+          (click)="emitAddRow()">Добавить
+  </button>
+</form>

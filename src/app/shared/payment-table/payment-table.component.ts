@@ -12,8 +12,8 @@ export class PaymentTableComponent implements OnInit {
   @Input() public rowData: IPaymentTableRow[];
   @Input() public columnData: IPaymentTableColumn[];
 
-  @Output() removeTableRow: EventEmitter<number> = new EventEmitter<number>();
-  @Output() addPaymentData: EventEmitter<IPaymentTableRow> = new EventEmitter<IPaymentTableRow>();
+  @Output() public removeTableRow: EventEmitter<number> = new EventEmitter<number>();
+  @Output() public addPaymentData: EventEmitter<IPaymentTableRow> = new EventEmitter<IPaymentTableRow>();
 
   public monthNames: string[] = Object.values(MonthLangEnum);
 

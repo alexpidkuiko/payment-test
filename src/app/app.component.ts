@@ -15,12 +15,8 @@ export class AppComponent implements OnInit {
   constructor(private paymentTableService: PaymentTableService) {}
 
   public ngOnInit(): void {
-    this.rowData = this.paymentTableService.tableRowData$;
-    this.columnData = this.paymentTableService.tableColumnData$;
-
-    this.paymentTableService.addRow({paymentName: 'hellfhfhgfhggfhgfhfghfhgfhgfhgfhgfghfghfhgfghjhjhgfhgo', priceByDay: 2});
-    this.paymentTableService.addRow({paymentName: 'hfhgfhgfghfhghelloooooo', priceByDay: 50});
-    this.paymentTableService.addRow({paymentName: 'hhgfhgfhfff', priceByDay: 20000});
+    this.rowData = this.paymentTableService.getTableRowData();
+    this.columnData = this.paymentTableService.getTableColumnData();
   }
 
   public removeTableRow(index: number): void {

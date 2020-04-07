@@ -14,7 +14,7 @@ export class PaymentTableRowComponent implements OnInit {
   @Input() public rowData: IPaymentTableRow;
   @Input() public columnData: IPaymentTableColumn[];
 
-  @Output() removeTableRow: EventEmitter<void> = new EventEmitter<void>();
+  @Output() public removeTableRow: EventEmitter<void> = new EventEmitter<void>();
 
   public priceByDayControlName: string = PRICE_BY_DAY_CONTROL_NAME;
   public rowControlNames: string[] = [];

@@ -2,7 +2,7 @@ import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output
 import { PRICE_BY_DAY_CONTROL_NAME } from '../../../../utils/constants/payment-table-consts';
 import { IPaymentTableColumn, IPaymentTableRow } from '../../../../utils/interfaces/payment-table-interfaces';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
-import { MonthDaysEnum, MonthLangEnum } from '../../../../utils/enums/month.enum';
+import { MonthLangEnum } from '../../../../utils/enums/month.enum';
 
 @Component({
   selector: 'app-payment-table-row',
@@ -24,17 +24,6 @@ export class PaymentTableRowComponent implements OnInit {
 
   public ngOnInit(): void {
     this.initForm();
-  }
-
-  public getFullPrice(priceByDay: number): number {
-    const selectedMonth = Object.keys(this.rowFormGroup.value).filter((key) => this.rowFormGroup.value[key]);
-    let sumOfDays = 0;
-
-    selectedMonth.forEach((month: string) => {
-      sumOfDays += MonthDaysEnum[month];
-    });
-
-    return sumOfDays * priceByDay;
   }
 
   public emitRemoveRow(): void {

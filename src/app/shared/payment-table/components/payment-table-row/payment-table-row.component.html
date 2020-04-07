@@ -1,7 +1,7 @@
 <div class="table-row">
   <div class="payment-cell" *ngFor="let column of columnData">
     <ng-container *ngIf="column.controlName === priceByDayControlName; else simpleCell">
-      {{getFullPrice(rowData[column.controlName])}}
+      {{rowData[column.controlName] | priceByMonth : rowFormGroup.value}}
     </ng-container>
     <ng-template #simpleCell>
       {{ rowData[column.controlName] }}

@@ -19,3 +19,18 @@ export const INVALID_MOCK_PAYMENT_NAME = '';
 export const VALID_MOCK_PRICE_BY_DAY = 10;
 
 export const INVALID_MOCK_PRICE_BY_DAY = -1;
+
+export const MOCK_MONTH_CONTROL_DATA = {
+  January: true,
+  February: true,
+  March: false,
+  April: false,
+  May: false,
+  June: false,
+  July: false,
+  August: false,
+  September: false,
+  October: false,
+  November: false,
+  December: false,
+};

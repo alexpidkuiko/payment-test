@@ -1,6 +1,15 @@
-import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  EventEmitter,
+  Input,
+  OnChanges,
+  OnInit,
+  Output,
+  SimpleChanges
+} from '@angular/core';
 import { IPaymentTableColumn, IPaymentTableRow } from '../../utils/interfaces/payment-table-interfaces';
-import { MonthLangEnum } from '../../utils/enums/month.enum';
+import { MonthDaysEnum, MonthLangEnum } from '../../utils/enums/month.enum';
 
 @Component({
   selector: 'app-payment-table',
@@ -8,7 +17,7 @@ import { MonthLangEnum } from '../../utils/enums/month.enum';
   styleUrls: ['./payment-table.component.css'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class PaymentTableComponent implements OnInit {
+export class PaymentTableComponent implements OnInit, OnChanges {
   @Input() public rowData: IPaymentTableRow[];
   @Input() public columnData: IPaymentTableColumn[];
 
@@ -16,11 +25,27 @@ export class PaymentTableComponent implements OnInit {
   @Output() public addPaymentData: EventEmitter<IPaymentTableRow> = new EventEmitter<IPaymentTableRow>();
 
   public monthNames: string[] = Object.values(MonthLangEnum);
+  public spentFunds: number;
 
   constructor() { }
 
-  public ngOnInit(): void {
+  public ngOnChanges(changes: SimpleChanges): void {
+    let globSum = 0;
+    this.rowData.forEach((elem) => {
+      const selectedMonth = Object.keys(MonthLangEnum).filter((key) => elem[key]);
+      let sumOfDays = 0;
+
+      selectedMonth.forEach((month: string) => {
+        sumOfDays += MonthDaysEnum[month];
+      });
+
+      globSum += sumOfDays * elem.priceByDay;
+    });
+
+    this.spentFunds = globSum;
   }
+
+  public ngOnInit(): void {}
 
   public emitRemoveRow(index: number): void {
     this.removeTableRow.emit(index);

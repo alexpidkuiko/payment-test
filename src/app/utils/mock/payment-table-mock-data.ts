@@ -6,8 +6,38 @@ export const TABLE_COLUMN_DATA: IPaymentTableColumn[] = [
 ];
 
 export const TABLE_ROW_DATA: IPaymentTableRow[] = [
-  {paymentName: 'Интернет', priceByDay: 10},
-  {paymentName: 'Подписка на музыку', priceByDay: 15},
+  {
+    paymentName: 'Интернет',
+    priceByDay: 10,
+    January: true,
+    February: true,
+    March: false,
+    April: false,
+    May: false,
+    June: false,
+    July: false,
+    August: false,
+    September: false,
+    October: false,
+    November: false,
+    December: false,
+  },
+  {
+    paymentName: 'Подписка на музыку',
+    priceByDay: 15,
+    January: false,
+    February: false,
+    March: true,
+    April: true,
+    May: false,
+    June: false,
+    July: false,
+    August: false,
+    September: false,
+    October: false,
+    November: false,
+    December: false,
+  },
 ];
 
 export const MOCK_ROW_DATA: IPaymentTableRow = {paymentName: 'not empty line', priceByDay: 10};

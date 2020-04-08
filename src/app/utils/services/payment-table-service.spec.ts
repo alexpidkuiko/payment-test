@@ -32,4 +32,10 @@ describe('PaymentTableService', () => {
     service.removeRow(0);
     expect(service.tableRowData$.value.length).toEqual(1);
   });
+
+  it('length of tableRowData$ should by Equal length after changeRow call', () => {
+    const service: PaymentTableService = TestBed.get(PaymentTableService);
+    service.changeRow(1, MOCK_ROW_DATA);
+    expect(service.tableRowData$.value.length).toEqual(2);
+  });
 });

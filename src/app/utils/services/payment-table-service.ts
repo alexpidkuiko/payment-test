@@ -24,6 +24,18 @@ export class PaymentTableService {
     this.tableRowData$.next([...rowDataBuf.filter((e, index) => index !== i)]);
   }
 
+  public changeRow(i: number, data): void {
+    const rowDataBuf = this.tableRowData$.getValue();
+    const searchElem = rowDataBuf.find((elem, index) => index === i);
+    const newData = {
+      ...searchElem,
+      ...data
+    };
+
+    rowDataBuf.splice(i, 1, newData);
+    this.tableRowData$.next([...rowDataBuf]);
+  }
+
   public getTableRowData(): Observable<IPaymentTableRow[]> {
     return this.tableRowData$;
   }

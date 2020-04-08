@@ -15,9 +15,20 @@
 }
 
 .month-form {
-  flex-grow: 6;
+  flex-grow: 2;
   display: flex;
   text-align: center;
   align-items: center;
   justify-content: space-between;
+}
+
+.delete-col {
+  max-width: 115px;
+  min-width: 115px;
+}
+
+.month-checkbox {
+  position: inherit;
+  width: 15px;
+  height: 15px;
 }

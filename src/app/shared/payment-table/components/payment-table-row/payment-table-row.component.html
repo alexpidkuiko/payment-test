@@ -9,10 +9,10 @@
   </div>
   <form class="month-form" [formGroup]="rowFormGroup">
     <div class="month-cell" *ngFor="let control of rowControlNames">
-      <input type="checkbox" class="form-check-input" [formControlName]="control" >
+      <input type="checkbox" class="form-check-input month-checkbox" [formControlName]="control" >
     </div>
   </form>
-  <div>
+  <div class="delete-col pl-5">
     <button type="button" class="btn btn-danger"
             (click)="emitRemoveRow()">Удалить
     </button>

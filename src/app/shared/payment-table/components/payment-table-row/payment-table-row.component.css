@@ -1,31 +1,25 @@
-.table-row {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+.payment-cell {
+  display: inline-block;
+  width: 180px;
+  text-align: center;
 }
 
-.payment-cell {
+.month-cell {
+  display: inline-block;
+  width: 40px;
   text-align: center;
-  max-width: 200px;
-  min-width: 200px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  flex-grow: 1;
 }
 
 .month-form {
-  flex-grow: 2;
-  display: flex;
-  text-align: center;
-  align-items: center;
-  justify-content: space-between;
+  display: inline-block;
 }
 
-.delete-col {
-  max-width: 115px;
-  min-width: 115px;
+.delete-column {
+  display: inline-block;
+  width: 60px;
+  text-align: center;
 }
+
 
 .month-checkbox {
   position: inherit;

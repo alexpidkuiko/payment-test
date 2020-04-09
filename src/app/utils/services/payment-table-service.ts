@@ -7,10 +7,8 @@ import { TABLE_COLUMN_DATA, TABLE_ROW_DATA } from '../mock/payment-table-mock-da
   providedIn: 'root'
 })
 export class PaymentTableService {
-  public tableRowData$ = new BehaviorSubject(TABLE_ROW_DATA);
   public tableColumnData$ = new BehaviorSubject(TABLE_COLUMN_DATA);
-
-  constructor() {}
+  public tableRowData$ = new BehaviorSubject(TABLE_ROW_DATA);
 
   public addRow(currentData: IPaymentTableRow): void {
     const rowDataBuf = this.tableRowData$.getValue();

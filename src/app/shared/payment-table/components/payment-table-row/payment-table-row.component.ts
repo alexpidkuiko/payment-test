@@ -29,7 +29,7 @@ export class PaymentTableRowComponent implements OnInit, OnDestroy {
 
   @Output() public removeTableRow: EventEmitter<void> = new EventEmitter<void>();
 
-  public priceByDayControlName: string = PRICE_BY_DAY_CONTROL_NAME;
+  public priceByDayName: string = PRICE_BY_DAY_CONTROL_NAME;
   public rowControlNames: string[] = [];
   public rowFormGroup: FormGroup;
 
@@ -61,7 +61,7 @@ export class PaymentTableRowComponent implements OnInit, OnDestroy {
   private initForm(): void {
     this.rowFormGroup = this.fb.group({});
     Object.keys(MonthLangEnum).forEach((elem) => {
-      this.rowFormGroup.addControl(elem, new FormControl(this.rowData[elem], []));
+      this.rowFormGroup.addControl(elem, new FormControl(this.rowData ? this.rowData[elem] : null, []));
       this.rowControlNames = [...this.rowControlNames, elem];
     });
   }

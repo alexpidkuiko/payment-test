@@ -20,6 +20,7 @@ export class TableActionsBarComponent implements OnInit {
 
   public emitAddRow(): void {
     this.addPaymentData.emit(this.paymentFormGroup.value);
+    this.paymentFormGroup.reset();
   }
 
   private initForm(): void {

@@ -22,30 +22,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">92.86% </span>
+                <span class="strong">95.24% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>39/42</span>
+                <span class='fraction'>40/42</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">72.41% </span>
+                <span class="strong">74.19% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>21/29</span>
+                <span class='fraction'>23/31</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">80% </span>
+                <span class="strong">90% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>8/10</span>
+                <span class='fraction'>9/10</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">94.59% </span>
+                <span class="strong">97.3% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>35/37</span>
+                <span class='fraction'>36/37</span>
             </div>
         
             
@@ -142,34 +142,34 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">6x</span>
-<span class="cline-any cline-yes">6x</span>
-<span class="cline-any cline-yes">6x</span>
-<span class="cline-any cline-yes">6x</span>
-<span class="cline-any cline-yes">6x</span>
-<span class="cline-any cline-yes">6x</span>
-<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">10x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">6x</span>
-<span class="cline-any cline-yes">6x</span>
-<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">10x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">6x</span>
-<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">10x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">6x</span>
-<span class="cline-any cline-yes">6x</span>
-<span class="cline-any cline-yes">6x</span>
-<span class="cline-any cline-yes">72x</span>
-<span class="cline-any cline-yes">72x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">120x</span>
+<span class="cline-any cline-yes">120x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
@@ -223,14 +223,14 @@ export class PaymentTableRowComponent implements OnInit, OnDestroy {
 &nbsp;
   @Output() public removeTableRow: EventEmitter&lt;void&gt; = new EventEmitter&lt;void&gt;();
 &nbsp;
-  public priceByDayCont<span class="fstat-no" title="function not covered" >ro</span>lName: string = <span class="cstat-no" title="statement not covered" >PRICE_BY_DAY_CONTROL_NAME;</span>
+  public priceByDayName<span class="fstat-no" title="function not covered" >: </span>string = PRICE_B<span class="cstat-no" title="statement not covered" >Y_DAY_CONTROL_NAME;</span>
   public rowControlNames: string[] = [];
   public rowFormGroup: FormGroup;
 &nbsp;
   private destroy$: Subject&lt;void&gt; = new Subject&lt;void&gt;();
 &nbsp;
-  constructor(private fb: FormBuilder,<span class="fstat-no" title="function not covered" ></span>
-<span class="cstat-no" title="statement not covered" >              private cdr: ChangeDet</span>ectorRef,
+  constructor(private fb: FormBuilder,
+              private cdr: ChangeDetectorRef,
               private paymentTableService: PaymentTableService) { }
 &nbsp;
   public ngOnInit(): void {
@@ -255,7 +255,7 @@ export class PaymentTableRowComponent implements OnInit, OnDestroy {
   private initForm(): void {
     this.rowFormGroup = this.fb.group({});
     Object.keys(MonthLangEnum).forEach((elem) =&gt; {
-      this.rowFormGroup.addControl(elem, new FormControl(this.rowData[elem], []));
+      this.rowFormGroup.addControl(elem, new FormControl(this.rowData ? this.rowData[elem] : null, []));
       this.rowControlNames = [...this.rowControlNames, elem];
     });
   }
@@ -267,7 +267,7 @@ export class PaymentTableRowComponent implements OnInit, OnDestroy {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Wed Apr 08 2020 11:42:35 GMT+0300 (GMT+03:00)
+                at Thu Apr 09 2020 19:52:18 GMT+0300 (GMT+03:00)
             </div>
         </div>
         <script src="..\..\..\..\..\..\prettify.js"></script>

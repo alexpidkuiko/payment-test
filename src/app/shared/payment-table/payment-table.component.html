@@ -1,18 +1,18 @@
 <app-table-actions-bar (addPaymentData)="emitAddRow($event)"></app-table-actions-bar>
 <div class="payment-table m-3">
   <div class="table-head">
-    <div *ngFor="let item of columnData; trackBy: trackByFn">
+    <div class="main-column" *ngFor="let item of columnData; trackBy: trackByFn">
       <span>{{item.title}}</span>
     </div>
-    <div *ngFor="let month of monthNames; trackBy: trackByFn">
+    <div class="month-column" *ngFor="let month of monthNames; trackBy: trackByFn">
       <span>{{month}}</span>
     </div>
-    <div>
+    <div class="delete-column">
       <span>Удалить</span>
     </div>
   </div>
   <div class="table-body">
-    <div class="table-row mb-2" *ngFor="let item  of rowData; let i = index; trackBy: trackByFn">
+    <div class="table-row mb-2 mt-2" *ngFor="let item  of rowData; let i = index; trackBy: trackByFn">
       <app-payment-table-row [columnData]="columnData"
                              [rowData]="item"
                              [rowIndex]="i"

@@ -4,7 +4,6 @@ import {
   EventEmitter,
   Input,
   OnChanges,
-  OnInit,
   Output,
   SimpleChanges
 } from '@angular/core';
@@ -17,7 +16,7 @@ import { MonthDaysEnum, MonthLangEnum } from '../../utils/enums/month.enum';
   styleUrls: ['./payment-table.component.css'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class PaymentTableComponent implements OnInit, OnChanges {
+export class PaymentTableComponent implements OnChanges {
   @Input() public rowData: IPaymentTableRow[];
   @Input() public columnData: IPaymentTableColumn[];
 
@@ -26,8 +25,6 @@ export class PaymentTableComponent implements OnInit, OnChanges {
 
   public monthNames: string[] = Object.values(MonthLangEnum);
   public spentFunds: number;
-
-  constructor() { }
 
   public ngOnChanges(changes: SimpleChanges): void {
     let globSum = 0;
@@ -44,8 +41,6 @@ export class PaymentTableComponent implements OnInit, OnChanges {
 
     this.spentFunds = globSum;
   }
-
-  public ngOnInit(): void {}
 
   public emitRemoveRow(index: number): void {
     this.removeTableRow.emit(index);

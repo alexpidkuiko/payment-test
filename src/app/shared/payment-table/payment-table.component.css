@@ -1,8 +1,39 @@
 .payment-table {
-  width: calc(100vw - 40px);
+  width: 900px;
 }
 
 .table-head {
-  display: flex;
-  justify-content: space-between;
+  border-bottom: 3px solid #17a2b8;
+  padding-bottom: 10px;
+  text-align: left;
+}
+
+.table-row {
+  padding: 10px 0;
+}
+
+.table-row:nth-child(odd) {
+  background: white;
+}
+
+.table-row:nth-child(even) {
+  background: #17a2b8;
+}
+
+.main-column {
+  display: inline-block;
+  width: 180px;
+  text-align: center;
+}
+
+.month-column {
+  display: inline-block;
+  width: 40px;
+  text-align: center;
+}
+
+.delete-column {
+  display: inline-block;
+  width: 60px;
+  text-align: center;
 }

@@ -1,13 +1,25 @@
+.payment-cell:first-child {
+  border-left: 2px solid black;
+}
+
 .payment-cell {
   display: inline-block;
-  width: 180px;
+  width: 220px;
   text-align: center;
+  padding: 10px 0;
+  border: 1px solid black;
+}
+
+.payment-cell:nth-child(2) {
+  width: 120px;
 }
 
 .month-cell {
   display: inline-block;
   width: 40px;
   text-align: center;
+  padding: 10px 0;
+  border: 1px solid black;
 }
 
 .month-form {
@@ -16,8 +28,11 @@
 
 .delete-column {
   display: inline-block;
-  width: 60px;
+  width: 80px;
   text-align: center;
+  padding: 10px 0;
+  border: 1px solid black;
+  border-right: 2px solid black;
 }
 
 

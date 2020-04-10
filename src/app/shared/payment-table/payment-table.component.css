@@ -2,38 +2,57 @@
   width: 900px;
 }
 
-.table-head {
-  border-bottom: 3px solid #17a2b8;
-  padding-bottom: 10px;
-  text-align: left;
-}
-
-.table-row {
-  padding: 10px 0;
-}
-
 .table-row:nth-child(odd) {
   background: white;
 }
 
 .table-row:nth-child(even) {
-  background: #17a2b8;
+  background: #ECECEC;
+}
+
+.table-row:last-child {
+  border-bottom: 1px solid black;
+}
+
+.main-column:first-child {
+  border-left: 2px solid black;
 }
 
 .main-column {
   display: inline-block;
-  width: 180px;
+  width: 220px;
   text-align: center;
+  padding: 10px 0;
+  border: 1px solid black;
+  background: #C8C8C8;
+}
+
+.main-column:nth-child(2) {
+  width: 120px;
 }
 
 .month-column {
   display: inline-block;
   width: 40px;
   text-align: center;
+  padding: 10px 0;
+  border: 1px solid black;
+  background: #C8C8C8;
 }
 
 .delete-column {
   display: inline-block;
-  width: 60px;
+  width: 80px;
   text-align: center;
+  padding: 10px 0;
+  border: 1px solid black;
+  background: #C8C8C8;
+}
+
+.delete-column:last-child {
+  border-right: 2px solid black;
+}
+
+.table-head {
+  border-top: 1px solid black;
 }

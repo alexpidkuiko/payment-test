@@ -12,7 +12,7 @@
     </div>
   </div>
   <div class="table-body">
-    <div class="table-row mb-2 mt-2" *ngFor="let item  of rowData; let i = index; trackBy: trackByFn">
+    <div class="table-row" *ngFor="let item  of rowData; let i = index; trackBy: trackByFn">
       <app-payment-table-row [columnData]="columnData"
                              [rowData]="item"
                              [rowIndex]="i"
@@ -20,7 +20,7 @@
       </app-payment-table-row>
     </div>
   </div>
-  <div class="table-footer">
+  <div class="table-footer mt-3">
     <p>Израсходовано средств: {{spentFunds}}</p>
   </div>
 </div>

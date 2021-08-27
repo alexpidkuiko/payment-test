@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { PaymentTableRowComponent } from './payment-table-row.component';
 import { FormBuilder, FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -9,7 +9,7 @@ describe('PaymentTableRowComponent', () => {
   let component: PaymentTableRowComponent;
   let fixture: ComponentFixture<PaymentTableRowComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       imports: [
         FormsModule,

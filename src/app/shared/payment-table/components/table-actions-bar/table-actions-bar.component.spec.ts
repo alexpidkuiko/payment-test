@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed, fakeAsync } from '@angular/core/testing';
+import { ComponentFixture, TestBed, fakeAsync, waitForAsync } from '@angular/core/testing';
 
 import { TableActionsBarComponent } from './table-actions-bar.component';
 import { FormBuilder, FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -15,7 +15,7 @@ describe('TableActionsBarComponent', () => {
   let component: TableActionsBarComponent;
   let fixture: ComponentFixture<TableActionsBarComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       imports: [
         FormsModule,

@@ -1,4 +1,4 @@
-import { TestBed, async, ComponentFixture } from '@angular/core/testing';
+import { TestBed, ComponentFixture, waitForAsync } from '@angular/core/testing';
 import { AppComponent } from './app.component';
 import { PaymentTableModule } from './shared/payment-table/payment-table.module';
 import { PaymentTableService } from './utils/services/payment-table-service';
@@ -11,7 +11,7 @@ describe('AppComponent', () => {
   let spyOfRemoveTableRowMethod: jasmine.Spy;
   let spyOfAddPaymentDataMethod: jasmine.Spy;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [
         AppComponent

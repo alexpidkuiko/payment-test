@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { PaymentTableComponent } from './payment-table.component';
 import { TableActionsBarModule } from './components/table-actions-bar/table-actions-bar.module';
@@ -10,7 +10,7 @@ describe('PaymentTableComponent', () => {
   let component: PaymentTableComponent;
   let fixture: ComponentFixture<PaymentTableComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       imports: [TableActionsBarModule, PaymentTableRowModule],
       declarations: [ PaymentTableComponent ]

@@ -1,13 +1,13 @@
 import { IPaymentTableColumn, IPaymentTableRow } from '../interfaces/payment-table-interfaces';
 
 export const TABLE_COLUMN_DATA: IPaymentTableColumn[] = [
-  {title: 'Наименование платежа', controlName: 'paymentName' },
-  {title: 'Стоимость', controlName: 'priceByDay'}
+  {title: 'Payment description', controlName: 'paymentName' },
+  {title: 'Price by day', controlName: 'priceByDay'}
 ];
 
 export const TABLE_ROW_DATA: IPaymentTableRow[] = [
   {
-    paymentName: 'Интернет',
+    paymentName: 'Internet',
     priceByDay: 10,
     January: true,
     February: true,
@@ -23,7 +23,7 @@ export const TABLE_ROW_DATA: IPaymentTableRow[] = [
     December: false,
   },
   {
-    paymentName: 'Подписка на музыку',
+    paymentName: 'Car',
     priceByDay: 15,
     January: false,
     February: false,
